@@ -181,6 +181,22 @@
   footer{padding:40px 0;background:var(--ink);color:#c7d6d6}
   footer .fin{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-size:13.5px}
   footer a{color:#8fd0cf}
+  .morelink{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;color:var(--teal);cursor:pointer;border:0;background:none;padding:0;font-family:var(--sans);letter-spacing:.2px}
+  .morelink:hover{color:var(--teal-deep)}
+  .modal-backdrop{position:fixed;inset:0;background:rgba(10,40,44,.55);z-index:200;display:none;padding:5vh 18px;overflow-y:auto}
+  .modal-backdrop.open{display:block}
+  body.modal-open{overflow:hidden}
+  .modal{max-width:760px;margin:0 auto;background:var(--paper);border-radius:16px;border:1px solid var(--line);box-shadow:0 30px 80px -30px rgba(10,50,54,.6);padding:38px 42px 46px;position:relative}
+  .modal .mclose{position:absolute;top:14px;right:18px;background:none;border:0;font-size:28px;line-height:1;color:var(--muted);cursor:pointer}
+  .modal .mclose:hover{color:var(--ink)}
+  .modal .mname{font-family:var(--serif);font-size:27px;color:var(--ink);margin:0 0 4px}
+  .modal .mrole{font-size:12.5px;color:var(--teal);text-transform:uppercase;letter-spacing:.5px;font-weight:600;margin:0 0 18px}
+  .modal p{font-size:14.5px;color:var(--ink-soft);margin:0 0 8px;line-height:1.66;max-width:none}
+  .modal h4{font-family:var(--sans);font-size:11.5px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:700;margin:22px 0 9px;border-top:1px solid var(--line);padding-top:16px}
+  .modal ul.mlist{list-style:none;margin:0;padding:0}
+  .modal ul.mlist li{font-size:14px;color:var(--ink-soft);padding:4px 0;line-height:1.5}
+  .modal ul.mlist li .yr{color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+  @media(max-width:560px){.modal{padding:30px 22px 36px}}
   :focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:3px}
 </style>
 
@@ -204,7 +220,7 @@
 
 <header class="hero" id="top">
   <div class="hero-in">
-    <div class="eyebrow"><span class="t-en">Shenzhen University · School of Biomedical Engineering</span><span class="t-zh">深圳大学医学部 · 生物医学工程学院</span></div>
+    <div class="eyebrow"><span class="t-en">Shenzhen University</span><span class="t-zh">深圳大学</span></div>
     <h1><span class="t-en">Microfluidics &amp; Soft Matter Group</span><span class="t-zh">微流控与软物质课题组</span></h1>
     <p class="tagline"><span class="t-en">All-aqueous microfluidics, coacervate droplets, and the soft-matter physics of liquid–liquid phase separation.</span><span class="t-zh">全水相微流控 · 凝聚液滴 · 液–液相分离的软物质物理</span></p>
     <p class="role"><span class="t-en">Principal investigators — Tiantian Kong · Zhou Liu · Cheng Qi · Bin Kong</span><span class="t-zh">课题组 PI —— 孔湉湉 · 刘洲 · 齐成 · 孔彬</span></p>
@@ -423,6 +439,7 @@
         <p class="pimeta"><b><span class="t-en">Honors</span><span class="t-zh">荣誉</span></b><span class="t-en">NSFC Excellent Young Scientists Fund (2023); Guangdong Pearl River Scholar (2018); Microsystems &amp; Nanoengineering Young Scientist Award (2020); Soft Matter Emerging Investigator, RSC (2020); Shenzhen Overseas High-level Talent, Class B (2020); CIESC Basic Research Award, 2nd Prize / 1st awardee (2022); Silver Medal, Geneva International Exhibition of Inventions (2018).</span><span class="t-zh">国家自然科学基金优秀青年科学基金（2023）；广东省珠江青年学者（2018）；Microsystems &amp; Nanoengineering 优秀青年科学家奖（2020）；英国皇家化学会 Soft Matter 新锐科学家（2020）；深圳市海外高层次人才 B 类（2020）；中国化工学会基础研究成果奖二等奖（第一完成人，2022）；日内瓦国际发明展银奖（2018）。</span></p>
         <p class="pimeta"><b><span class="t-en">Service</span><span class="t-zh">任职</span></b><span class="t-en">Associate Editor, <em>Microsystems &amp; Nanoengineering</em>; youth editorial boards of <em>Green Energy &amp; Environment</em>, <em>InfoMat</em>, and <em>CIESC Journal</em>; Guest Editor, <em>Small</em>; Council Member, Chinese Institute of Chemical Engineering; Director, Guangdong Young Scientists Association.</span><span class="t-zh">Microsystems &amp; Nanoengineering 副主编；Green Energy &amp; Environment、InfoMat、《化工学报》《化工进展》青年编委；Small 客座编辑；中国化工学会理事；广东省青年科学家协会理事。</span></p>
         <p class="pimeta"><b><span class="t-en">Community</span><span class="t-zh">社会任职</span></b><span class="t-en">Vice Chair, Nanshan District Branch, China Democratic League (Shenzhen).</span><span class="t-zh">中国民主同盟 深圳市南山总支 副主任委员。</span></p>
+        <button class="morelink" data-modal="kttModal"><span class="t-en">Full profile →</span><span class="t-zh">查看完整介绍 →</span></button>
       </div></div>
       <div class="pibio"><div class="avatar">刘</div><div class="pitext">
         <p class="piname">Zhou Liu · 刘洲</p>
@@ -567,6 +584,71 @@
   </div>
 </section>
 
+<div class="modal-backdrop" id="kttModal" role="dialog" aria-modal="true" aria-label="Tiantian Kong — full profile">
+  <div class="modal">
+    <button class="mclose" aria-label="Close">×</button>
+    <h3 class="mname">Tiantian Kong · 孔湉湉</h3>
+    <p class="mrole"><span class="t-en">Distinguished Professor · School of Biomedical Engineering, Shenzhen University</span><span class="t-zh">深圳大学医学部 生物医学工程学院 特聘教授 · 博士生导师</span></p>
+
+    <p><span class="t-en">Tiantian Kong leads the Microfluidics &amp; Soft Matter Group at Shenzhen University, studying the soft-matter physics of complex aqueous systems. The group engineers all-aqueous droplets, coacervates, and liquid–liquid phase separation into functional and living materials — synthetic cells, vascularized tissues, organ-on-chip devices, and flexible bioelectronics — working across chemical engineering, mechanics, and medicine.</span><span class="t-zh">孔湉湉领导深圳大学微流控与软物质课题组，研究复杂水相体系的软物质物理。课题组立足化学工程、力学与医学的交叉，将全水相液滴、凝聚液滴与液–液相分离工程化为功能材料与生命材料——人工细胞、血管化组织、器官芯片与柔性生物电子。</span></p>
+
+    <h4><span class="t-en">Education</span><span class="t-zh">教育背景</span></h4>
+    <ul class="mlist">
+      <li><span class="t-en">PhD, Mechanical / Biomedical Engineering, University of Hong Kong — advisors Liqiu Wang &amp; Anthony Shum</span><span class="t-zh">香港大学 机械工程 / 生物医学工程系 博士 — 导师 王立秋、岑浩璋</span> <span class="yr">· 2009–2013</span></li>
+      <li><span class="t-en">MSc, University of Hong Kong</span><span class="t-zh">香港大学 硕士</span> <span class="yr">· 2008–2009</span></li>
+      <li><span class="t-en">BEng, Electrical Engineering &amp; Automation, Shanghai Maritime University</span><span class="t-zh">上海海事大学 电气工程及自动化系 学士</span> <span class="yr">· 2003–2007</span></li>
+    </ul>
+
+    <h4><span class="t-en">Appointments</span><span class="t-zh">工作经历</span></h4>
+    <ul class="mlist">
+      <li><span class="t-en">Distinguished Professor, School of Biomedical Engineering, SZU</span><span class="t-zh">深圳大学 生物医学工程学院 特聘教授、博导</span> <span class="yr">· 2024–</span></li>
+      <li><span class="t-en">Associate Professor, SZU</span><span class="t-zh">深圳大学 副教授、硕导</span> <span class="yr">· 2018–2023</span></li>
+      <li><span class="t-en">Lecturer, SZU</span><span class="t-zh">深圳大学 讲师、硕导</span> <span class="yr">· 2015–2018</span></li>
+      <li><span class="t-en">Postdoctoral Fellow, University of Hong Kong</span><span class="t-zh">香港大学 博士后研究员</span> <span class="yr">· 2014–2015</span></li>
+    </ul>
+
+    <h4><span class="t-en">Research directions</span><span class="t-zh">研究方向</span></h4>
+    <ul class="mlist">
+      <li><span class="t-en">All-aqueous &amp; aqueous two-phase microfluidics</span><span class="t-zh">全水相与双水相微流控</span></li>
+      <li><span class="t-en">Coacervates &amp; liquid–liquid phase separation</span><span class="t-zh">凝聚液滴与液–液相分离</span></li>
+      <li><span class="t-en">All-aqueous embedded 3D bioprinting</span><span class="t-zh">全水相嵌入式 3D 生物打印</span></li>
+      <li><span class="t-en">Synthetic cells &amp; multi-compartment protocells</span><span class="t-zh">人工细胞与多室原细胞</span></li>
+      <li><span class="t-en">Organoids &amp; organ-on-chip</span><span class="t-zh">类器官与器官芯片</span></li>
+      <li><span class="t-en">Hydrogels, microfibers &amp; flexible bioelectronics</span><span class="t-zh">水凝胶、微纤维与柔性生物电子</span></li>
+    </ul>
+
+    <h4><span class="t-en">Honors</span><span class="t-zh">学术奖励</span></h4>
+    <ul class="mlist">
+      <li><span class="t-en">NSFC Excellent Young Scientists Fund</span><span class="t-zh">国家自然科学基金 优秀青年科学基金</span> <span class="yr">· 2023</span></li>
+      <li><span class="t-en">CIESC Basic Research Award, Second Prize (1st awardee)</span><span class="t-zh">中国化工学会 基础研究成果奖 二等奖（第一完成人）</span> <span class="yr">· 2022</span></li>
+      <li><span class="t-en">Young Scientist Award, Microsystems &amp; Nanoengineering Summit</span><span class="t-zh">Microsystems &amp; Nanoengineering 优秀青年科学家奖</span> <span class="yr">· 2020</span></li>
+      <li><span class="t-en">Soft Matter Emerging Investigator, Royal Society of Chemistry</span><span class="t-zh">英国皇家化学会 Soft Matter 新锐科学家</span> <span class="yr">· 2020</span></li>
+      <li><span class="t-en">Shenzhen Overseas High-level Talent, Class B</span><span class="t-zh">深圳市海外高层次人才 B 类</span> <span class="yr">· 2020</span></li>
+      <li><span class="t-en">Guangdong Pearl River Scholar</span><span class="t-zh">广东省 珠江青年学者</span> <span class="yr">· 2018</span></li>
+      <li><span class="t-en">Silver Medal, Geneva International Exhibition of Inventions</span><span class="t-zh">日内瓦国际发明展 银奖</span> <span class="yr">· 2018</span></li>
+    </ul>
+
+    <h4><span class="t-en">Editorial &amp; academic service</span><span class="t-zh">编委与学术任职</span></h4>
+    <ul class="mlist">
+      <li><span class="t-en">Associate Editor, <em>Microsystems &amp; Nanoengineering</em> (Springer Nature)</span><span class="t-zh"><em>Microsystems &amp; Nanoengineering</em>（Springer Nature）副主编</span> <span class="yr">· 2022–</span></li>
+      <li><span class="t-en">Youth editorial boards: <em>Green Energy &amp; Environment</em>, <em>InfoMat</em>, <em>CIESC Journal</em></span><span class="t-zh">青年编委：<em>Green Energy &amp; Environment</em>、<em>InfoMat</em>、《化工学报》《化工进展》</span></li>
+      <li><span class="t-en">Guest Editor, <em>Small</em> — "The Fourth Decade of Microfluidics"</span><span class="t-zh"><em>Small</em> 客座编辑 —《展望微流控第四个"十年"》</span> <span class="yr">· 2020</span></li>
+      <li><span class="t-en">Council Member, Chinese Institute of Chemical Engineering</span><span class="t-zh">中国化工学会 理事</span></li>
+      <li><span class="t-en">Member, CIESC Youth Committee &amp; Micro-Chemical Engineering Committee</span><span class="t-zh">中国化工学会 青年工作委员会 · 微化工专委会 委员</span></li>
+      <li><span class="t-en">Director, Guangdong Young Scientists Association</span><span class="t-zh">广东省青年科学家协会 理事</span></li>
+      <li><span class="t-en">Session Chair — 9th Intl. Conference on Optofluidics (2019); Intl. Symposium on Microsystems &amp; Microchemistry (2016)</span><span class="t-zh">分会主席 — 第九届交叉学科光流控国际会议（2019）；微系统与微化学国际研讨会（2016）</span></li>
+    </ul>
+
+    <h4><span class="t-en">Community</span><span class="t-zh">社会任职</span></h4>
+    <ul class="mlist">
+      <li><span class="t-en">Vice Chair, Nanshan District Branch, China Democratic League (Shenzhen)</span><span class="t-zh">中国民主同盟 深圳市南山总支 副主任委员</span></li>
+    </ul>
+
+    <h4><span class="t-en">Student mentoring</span><span class="t-zh">学生培养</span></h4>
+    <p><span class="t-en">Students supervised have received the Graduate National Scholarship, the Tencent Innovation Scholarship, and Shenzhen University Outstanding Graduate honors.</span><span class="t-zh">指导研究生多人获国家奖学金、腾讯创新创始人奖学金、深圳大学优秀毕业研究生等荣誉。</span></p>
+  </div>
+</div>
+
 <footer>
   <div class="fin">
     <span>© 2026 SZU Microfluidics &amp; Soft Matter Group · Tiantian Kong</span>
@@ -590,6 +672,17 @@
   var tog=document.getElementById('navtoggle'),links=document.getElementById('navlinks');
   tog.addEventListener('click',function(){links.classList.toggle('open');});
   links.addEventListener('click',function(e){if(e.target.tagName==='A')links.classList.remove('open');});
+
+  // Profile modals
+  document.querySelectorAll('.morelink[data-modal]').forEach(function(b){
+    b.addEventListener('click',function(){var m=document.getElementById(b.getAttribute('data-modal'));if(m){m.classList.add('open');document.body.classList.add('modal-open');}});
+  });
+  document.querySelectorAll('.modal-backdrop').forEach(function(bd){
+    function close(){bd.classList.remove('open');document.body.classList.remove('modal-open');}
+    bd.addEventListener('click',function(e){if(e.target===bd)close();});
+    var x=bd.querySelector('.mclose');if(x)x.addEventListener('click',close);
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.modal-backdrop.open').forEach(function(bd){bd.classList.remove('open');});document.body.classList.remove('modal-open');}});
 
   // Coacervate droplet field
   var cv=document.getElementById('drops');if(!cv)return;
