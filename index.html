@@ -37,7 +37,7 @@
   .lang-en .t-zh{display:none!important}
   .lang-zh .t-en{display:none!important}
   a{color:var(--teal);text-decoration:none}
-  a:hover{color:var(--coral)}
+  a:hover{color:var(--teal-deep)}
   h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.15;text-wrap:balance;color:var(--ink)}
   img{max-width:100%}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
@@ -89,7 +89,7 @@
   section{padding:78px 0;border-bottom:1px solid var(--line)}
   section.band{background:var(--band)}
   .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:34px}
-  .sec-head .num{font-family:var(--serif);font-size:15px;color:var(--teal);font-variant-numeric:tabular-nums;padding-top:4px}
+  .sec-head .num{display:none}
   .sec-head h2{font-size:clamp(26px,3.6vw,38px);margin:0}
   .sec-head .sub{font-size:14px;color:var(--muted);margin-left:auto;text-align:right;max-width:34ch}
   .lead{font-size:19px;color:var(--ink-soft);max-width:66ch}
@@ -103,8 +103,7 @@
   .rcard .rnum{font-family:var(--serif);font-size:13px;color:var(--teal);letter-spacing:1px}
   .rcard h3{font-size:20px;margin:8px 0 10px}
   .rcard p{font-size:15px;color:var(--muted);margin:0;line-height:1.6}
-  .rcard::after{content:"";position:absolute;right:-30px;bottom:-30px;width:90px;height:90px;border-radius:50%;
-    background:radial-gradient(circle at 35% 30%,rgba(232,111,81,.16),rgba(14,107,112,.06));opacity:.9}
+  .rcard::after{display:none}
 
   /* PUBLICATIONS */
   .pubmeta{font-size:14.5px;color:var(--muted);margin:0 0 26px;max-width:70ch}
@@ -180,7 +179,7 @@
   footer{padding:40px 0;background:var(--ink);color:#c7d6d6}
   footer .fin{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-size:13.5px}
   footer a{color:#8fd0cf}
-  :focus-visible{outline:2px solid var(--coral);outline-offset:2px;border-radius:3px}
+  :focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:3px}
 </style>
 
 <nav class="top">
@@ -203,18 +202,11 @@
 </nav>
 
 <header class="hero" id="top">
-  <canvas id="drops" aria-hidden="true"></canvas>
   <div class="hero-in">
     <div class="eyebrow"><span class="t-en">Shenzhen University · School of Biomedical Engineering</span><span class="t-zh">深圳大学医学部 · 生物医学工程学院</span></div>
     <h1><span class="t-en">Microfluidics &amp; Soft Matter Group</span><span class="t-zh">微流控与软物质课题组</span></h1>
     <p class="tagline"><span class="t-en">All-aqueous microfluidics, coacervate droplets, and the soft-matter physics of liquid–liquid phase separation.</span><span class="t-zh">全水相微流控 · 凝聚液滴 · 液–液相分离的软物质物理</span></p>
     <p class="role"><span class="t-en">Principal investigators — Tiantian Kong · Zhou Liu · Cheng Qi · Bin Kong</span><span class="t-zh">课题组 PI —— 孔湉湉 · 刘洲 · 齐成 · 孔彬</span></p>
-
-    <div class="metrics">
-      <div class="metric"><b>6,242</b><span class="t-en">Citations</span><span class="t-zh">总引用</span></div>
-      <div class="metric"><b>47</b><span class="t-en">h-index</span><span class="t-zh">h 指数</span></div>
-      <div class="metric"><b>85</b><span class="t-en">i10-index</span><span class="t-zh">i10 指数</span></div>
-    </div>
 
     <div class="cta-row">
       <a class="btn primary" href="#research"><span class="t-en">Explore the research</span><span class="t-zh">了解研究</span></a>
@@ -424,49 +416,65 @@
     <div class="team-role-label"><span class="t-en">Principal Investigators</span><span class="t-zh">课题组 PI</span></div>
     <div class="piwrap">
       <div class="pibio"><div class="avatar">孔</div><div class="pitext">
-        <p class="piname">Tiantian Kong · 孔湉湉<span class="lead-tag"><span class="t-en">Team Lead</span><span class="t-zh">领衔</span></span></p>
+        <p class="piname">Tiantian Kong · 孔湉湉</p>
         <p class="pirole"><span class="t-en">Distinguished Professor · School of Biomedical Engineering, SZU</span><span class="t-zh">深圳大学医学部 生物医学工程学院 特聘教授 · 博导</span></p>
         <p class="pibiotext"><span class="t-en">PhD (2013) and postdoc at the University of Hong Kong with Liqiu Wang and Anthony Shum. Recipient of the NSFC Excellent Young Scientists Fund (2023) and a Guangdong Pearl River Scholar (2018); Associate Editor of <em>Microsystems &amp; Nanoengineering</em>. Research: coacervates, liquid–liquid phase separation, and all-aqueous microfluidics.</span><span class="t-zh">2013 年香港大学博士，师从王立秋、岑浩璋教授并完成博士后研究。国家自然科学基金优秀青年科学基金（2023）、广东省珠江青年学者（2018）获得者；<em>Microsystems &amp; Nanoengineering</em> 副主编。研究：凝聚体、液–液相分离与全水相微流控。</span></p>
       </div></div>
       <div class="pibio"><div class="avatar">刘</div><div class="pitext">
         <p class="piname">Zhou Liu · 刘洲</p>
-        <p class="pirole"><span class="t-en">Associate Professor · College of Chemistry &amp; Environmental Engineering, SZU</span><span class="t-zh">深圳大学 化学与环境工程学院 副教授 · 博导</span></p>
-        <p class="pibiotext"><span class="t-en">BEng, Huazhong University of Science and Technology; PhD and postdoc, University of Hong Kong (Mechanical Engineering); joined SZU in 2016. Research: microfluidics, fluid physics, and soft-matter materials for biomedical applications, with 50+ papers in <em>Nature Communications</em>, <em>Angew. Chem.</em>, and <em>Adv. Mater.</em></span><span class="t-zh">本科毕业于华中科技大学，博士与博士后于香港大学机械工程系，2016 年入职深圳大学。研究：微流控、流体物理与软物质材料及其生物医学应用，在 <em>Nature Communications</em>、<em>Angew. Chem.</em>、<em>Adv. Mater.</em> 等发表论文 50 余篇。</span></p>
+        <p class="pirole"><span class="t-en">Associate Professor · College of Chemistry &amp; Environmental Engineering, SZU</span><span class="t-zh">深圳大学 化学与环境工程学院 副教授 · 博导 · 特聘研究员</span></p>
+        <p class="pibiotext"><span class="t-en">BEng, Huazhong University of Science and Technology (Energy &amp; Power Engineering); PhD and postdoc, University of Hong Kong (Mechanical Engineering, with Anderson Shum); joined SZU in 2016. Research: microfluidics, fluid physics, and soft-matter materials for biomedical applications, with 30+ first/corresponding-author papers (h-index 26) in <em>Nature Communications</em>, <em>Advanced Materials</em>, <em>Adv. Funct. Mater.</em>, <em>Angew. Chem.</em>, and <em>ACS Nano</em>. Honors include the Shenzhen Excellent Young Scientists Fund (2023), APL Rising Star, Guangdong Top-notch Young Talent, and two silver medals at the Geneva International Exhibition of Inventions.</span><span class="t-zh">本科毕业于华中科技大学能源与动力工程专业，博士与博士后于香港大学机械工程系（师从岑浩璋 Anderson Shum），2016 年入职深圳大学化学与环境工程学院。研究：微流控技术、流体物理与软物质材料及其生物医学应用，以第一 / 通讯作者在 <em>Nature Communications</em>、<em>Advanced Materials</em>、<em>Adv. Funct. Mater.</em>、<em>Angew. Chem.</em>、<em>ACS Nano</em> 等发表论文 30 余篇（H 指数 26）。荣誉包括 2023 年深圳市优秀青年基金、APL Rising Star、广东省青年拔尖人才，两获日内瓦国际发明展银奖等。</span></p>
       </div></div>
       <div class="pibio"><div class="avatar">齐</div><div class="pitext">
         <p class="piname">Cheng Qi · 齐成</p>
         <p class="pirole"><span class="t-en">Associate Professor · College of Mechatronics &amp; Control Engineering, SZU</span><span class="t-zh">深圳大学 机电与控制工程学院 副教授</span></p>
-        <p class="pibiotext"><span class="t-en">BEng, Huazhong University of Science and Technology; PhD, University of Hong Kong (Mechanical Engineering, 2016). Research: electrohydrodynamics of droplets and jets, multiphase microfluidics, and coacervate-based protocells and prototissues (first author, <em>Nature Communications</em>, 2024).</span><span class="t-zh">本科毕业于华中科技大学，2016 年获香港大学机械工程系博士学位。研究：液滴与射流的电流体动力学、多相微流控，以及凝聚体原细胞与原组织（<em>Nature Communications</em> 2024 一作）。</span></p>
+        <p class="pibiotext"><span class="t-en">BEng, Huazhong University of Science and Technology; PhD, University of Hong Kong (Mechanical Engineering, 2016), followed by postdoctoral research at HKU. Shenzhen Overseas High-level Talent. Research: intelligent magnetic-control systems and micro soft robots, AI-assisted microfluidic-chip development, and micro-/nano-fabrication for biomedical engineering; first author on the group's coacervate-based protocell work (<em>Nature Communications</em>, 2024).</span><span class="t-zh">本科毕业于华中科技大学，2016 年获香港大学机械工程系博士学位，并于港大从事博士后研究。深圳市海外高层次人才。研究：智能磁控系统与微型软体机器人、人工智能辅助微流控芯片开发、面向医工交叉的微纳制造；凝聚体原细胞工作一作（<em>Nature Communications</em> 2024）。</span></p>
       </div></div>
       <div class="pibio"><div class="avatar">彬</div><div class="pitext">
         <p class="piname">Bin Kong · 孔彬</p>
-        <p class="pirole"><span class="t-en">Assistant Professor · School of Biomedical Engineering, SZU</span><span class="t-zh">深圳大学医学部 生物医学工程学院 助理教授</span></p>
-        <p class="pibiotext"><span class="t-en">PhD in Biomedical Engineering, Tsinghua University (2020); visiting researcher, UC Berkeley (2018–2019); Shenzhen Overseas High-level Talent. Research: biomaterials, regenerative medicine, and ophthalmic tissue engineering — bioadhesive hydrogels and microneedles for wound healing.</span><span class="t-zh">2020 年清华大学生物医学工程博士；2018–2019 年美国加州大学伯克利分校访问研究；深圳市海外高层次人才。研究：生物材料、再生医学与眼科组织工程——用于创面修复的生物粘附水凝胶与微针。</span></p>
+        <p class="pirole"><span class="t-en">Assistant Professor &amp; Distinguished Research Fellow · School of Biomedical Engineering, SZU</span><span class="t-zh">深圳大学医学部 生物医学工程学院 助理教授 · 特聘研究员</span></p>
+        <p class="pibiotext"><span class="t-en">PhD, Tsinghua University (advisor: Wei Sun); visiting scholar at UC Berkeley; Shenzhen Overseas High-level Talent; committee member of the Bio-manufacturing Branch, Chinese Mechanical Engineering Society. Research: biofabrication and regenerative medicine, with 43+ first/corresponding-author (incl. co-) SCI papers in journals including <em>Nature Communications</em>, <em>Science Advances</em>, <em>Adv. Funct. Mater.</em>, <em>ACS Nano</em>, <em>Adv. Sci.</em>, <em>Nano Today</em>, and <em>Bioactive Materials</em>.</span><span class="t-zh">清华大学博士（导师：孙伟），美国加州大学伯克利分校访问学者，深圳市海外高层次人才，中国机械工程学会生物制造分会委员。研究：生物制造与再生医学，以第一 / 通讯作者（含共同）发表 SCI 论文 43 余篇，见于 <em>Nature Communications</em>、<em>Science Advances</em>、<em>Adv. Funct. Mater.</em>、<em>ACS Nano</em>、<em>Adv. Sci.</em>、<em>Nano Today</em>、<em>Bioactive Materials</em> 等。</span></p>
       </div></div>
     </div>
 
     <div class="team-role-label"><span class="t-en">Research Associates &amp; Postdocs</span><span class="t-zh">副研究员与博士后</span></div>
-    <div class="tgrid">
-      <div class="pcard"><div class="avatar">孟</div><p class="pn">Si Meng</p><p class="pz">孟思</p><p class="pr"><span class="t-en">Research Associate</span><span class="t-zh">副研究员</span></p><p class="pdir"><span class="t-en">Fiber-based flexible &amp; wearable sensors</span><span class="t-zh">纤维基柔性可穿戴传感器</span></p></div>
-      <div class="pcard"><div class="avatar">邓</div><p class="pn">Xiaokang Deng</p><p class="pz">邓小康</p><p class="pr"><span class="t-en">Research Associate</span><span class="t-zh">副研究员</span></p><p class="pdir"><span class="t-en">All-aqueous embedded 3D printing</span><span class="t-zh">全水相嵌入式 3D 打印</span></p></div>
-      <div class="pcard"><div class="avatar">陈</div><p class="pn">陈泰格</p><p class="pz">&nbsp;</p><p class="pr"><span class="t-en">Research Associate</span><span class="t-zh">副研究员</span></p><p class="pdir"><span class="t-en">Mitochondria-loaded microspheres for dendritic-cell metabolic therapy of dry eye</span><span class="t-zh">载线粒体微球调控树突状细胞代谢，治疗干眼</span></p></div>
-      <div class="pcard"><div class="avatar">吴</div><p class="pn">吴昊</p><p class="pz">Hao Wu</p><p class="pr"><span class="t-en">Postdoctoral Fellow</span><span class="t-zh">博士后</span></p><p class="pdir"><span class="t-en">Bottom-up protocells &amp; prototissue assembly</span><span class="t-zh">自下而上人工原细胞与原组织组装</span></p></div>
-      <div class="pcard"><div class="avatar">N</div><p class="pn">Mehwish Naz</p><p class="pz">&nbsp;</p><p class="pr"><span class="t-en">Postdoctoral Fellow</span><span class="t-zh">博士后</span></p><p class="pdir"><span class="t-en">Bottom-up protocells &amp; prototissue assembly</span><span class="t-zh">自下而上人工原细胞与原组织组装</span></p></div>
+    <div class="piwrap">
+      <div class="pibio"><div class="avatar">孟</div><div class="pitext">
+        <p class="piname">Si Meng · 孟思</p>
+        <p class="pirole"><span class="t-en">Associate Researcher · College of Chemistry &amp; Environmental Engineering, SZU</span><span class="t-zh">深圳大学 化学与环境工程学院 副研究员</span></p>
+        <p class="pibiotext"><span class="t-en">Shenzhen High-level Talent; trained with Academician Meifang Zhu (Donghua University). Research: fiber fabrication and structural design, smart wearables, and bioscaffold materials, with 20+ first/corresponding-author papers in <em>Adv. Funct. Mater.</em>, <em>Biomaterials</em>, <em>Nano Research</em>, <em>Small</em>, and <em>Small Methods</em>, and co-author of two fiber-science monographs.</span><span class="t-zh">深圳市高层次人才；师从东华大学朱美芳院士。研究：纤维的制备与结构设计、智能可穿戴、生物支架材料，以第一 / 通讯作者在 <em>Adv. Funct. Mater.</em>、<em>Biomaterials</em>、<em>Nano Research</em>、<em>Small</em>、<em>Small Methods</em> 等发表论文 20 余篇，参与编写纤维领域重要专著两部。</span></p>
+      </div></div>
+      <div class="pibio"><div class="avatar">邓</div><div class="pitext">
+        <p class="piname">Xiaokang Deng · 邓小康</p>
+        <p class="pirole"><span class="t-en">Research Associate</span><span class="t-zh">副研究员</span></p>
+        <p class="pibiotext"><span class="t-en">Research: all-aqueous embedded 3D printing, aqueous two-phase hydrogel microspheres, and stem-cell microcarriers; first-author paper in <em>Advanced Materials</em> (2024).</span><span class="t-zh">研究：全水相嵌入式 3D 打印、双水相水凝胶微球、干细胞微载体；一作论文见 <em>Advanced Materials</em>（2024）。</span></p>
+      </div></div>
+      <div class="pibio"><div class="avatar">陈</div><div class="pitext">
+        <p class="piname">陈泰格</p>
+        <p class="pirole"><span class="t-en">Research Associate</span><span class="t-zh">副研究员</span></p>
+        <p class="pibiotext"><span class="t-en">Research: mitochondria-loaded microspheres for dendritic-cell metabolic therapy of dry eye.</span><span class="t-zh">研究：载线粒体微球调控树突状细胞代谢，治疗干眼。</span></p>
+      </div></div>
+      <div class="pibio"><div class="avatar">吴</div><div class="pitext">
+        <p class="piname">吴昊 · Hao Wu</p>
+        <p class="pirole"><span class="t-en">Postdoctoral Fellow</span><span class="t-zh">博士后</span></p>
+        <p class="pibiotext"><span class="t-en">Research: bottom-up protocells and prototissue assembly.</span><span class="t-zh">研究：自下而上人工原细胞与原组织组装。</span></p>
+      </div></div>
+      <div class="pibio"><div class="avatar">N</div><div class="pitext">
+        <p class="piname">Mehwish Naz</p>
+        <p class="pirole"><span class="t-en">Postdoctoral Fellow</span><span class="t-zh">博士后</span></p>
+        <p class="pibiotext"><span class="t-en">Research: bottom-up protocells and prototissue assembly.</span><span class="t-zh">研究：自下而上人工原细胞与原组织组装。</span></p>
+      </div></div>
     </div>
 
     <div class="team-role-label"><span class="t-en">PhD Students</span><span class="t-zh">博士研究生</span></div>
     <div class="tgrid">
-      <div class="pcard"><div class="avatar">马</div><p class="pn">马敬</p><p class="pz">2021<span class="t-zh">级</span></p><p class="pr"><span class="t-en">PhD Student</span><span class="t-zh">博士生</span></p><p class="pdir"><span class="t-en">Embedded 3D bioprinting &amp; instability-driven inks</span><span class="t-zh">嵌入式 3D 生物打印与失稳驱动墨水</span></p></div>
-      <div class="pcard"><div class="avatar">欧</div><p class="pn">欧浩晖</p><p class="pz">2023<span class="t-zh">级</span></p><p class="pr"><span class="t-en">PhD Student</span><span class="t-zh">博士生</span></p><p class="pdir"><span class="t-en">Data-driven LLPS phase diagrams</span><span class="t-zh">数据驱动的液–液相分离相图</span></p></div>
-      <div class="pcard"><div class="avatar">尧</div><p class="pn">尧琴</p><p class="pz">2024<span class="t-zh">级</span></p><p class="pr"><span class="t-en">PhD Student</span><span class="t-zh">博士生</span></p><p class="pdir"><span class="t-en">Gas marbles &amp; all-aqueous soft materials</span><span class="t-zh">气体弹珠与全水相软材料</span></p></div>
+      <div class="pcard"><div class="avatar">马</div><p class="pn">马敬</p><p class="pz">2021<span class="t-zh">级</span></p><p class="pr"><span class="t-en">PhD Student</span><span class="t-zh">博士生</span></p><p class="pdir"><span class="t-en">Instability-driven 3D bioprinting &amp; aqueous two-phase microcapsules</span><span class="t-zh">失稳驱动 3D 生物打印与双水相微囊</span></p></div>
+      <div class="pcard"><div class="avatar">欧</div><p class="pn">欧浩晖</p><p class="pz">2023<span class="t-zh">级</span></p><p class="pr"><span class="t-en">PhD Student</span><span class="t-zh">博士生</span></p><p class="pdir"><span class="t-en">AI-driven microfluidics for coacervate droplets</span><span class="t-zh">AI 驱动的凝聚液滴微流控</span></p></div>
+      <div class="pcard"><div class="avatar">尧</div><p class="pn">尧琴</p><p class="pz">2024<span class="t-zh">级</span></p><p class="pr"><span class="t-en">PhD Student</span><span class="t-zh">博士生</span></p><p class="pdir"><span class="t-en">Coacervates &amp; extracellular vesicles</span><span class="t-zh">凝聚体与细胞外囊泡</span></p></div>
     </div>
 
     <div class="team-role-label"><span class="t-en">Master's Students</span><span class="t-zh">硕士研究生</span></div>
     <div class="mgrid">
-      <div class="mitem"><span class="mn">李磊</span><span class="my">· 2021</span></div>
-      <div class="mitem"><span class="mn">梁美玲</span><span class="my">· 2021</span></div>
-      <div class="mitem"><span class="mn">刘凯浪</span><span class="my">· 2021</span></div>
-      <div class="mitem"><span class="mn">吴迪文</span><span class="my">· 2022</span></div>
       <div class="mitem"><span class="mn">丁奥敏</span><span class="my">· 2024</span></div>
       <div class="mitem"><span class="mn">刘叶芊</span><span class="my">· 2024</span></div>
       <div class="mitem"><span class="mn">沈佩贝</span><span class="my">· 2024</span></div>
@@ -490,7 +498,7 @@
 
     <div class="team-role-label"><span class="t-en">Alumni</span><span class="t-zh">毕业生</span></div>
     <p class="alumni"><b><span class="t-en">Pursuing PhDs at HK universities:</span><span class="t-zh">赴港攻读博士：</span></b> 马旭东、周涛、王依涵、杨铭、张姗姗、周慧、姚晓雪。</p>
-    <p class="alumni"><b><span class="t-en">Graduated students &amp; former members:</span><span class="t-zh">毕业生与曾任成员：</span></b> 岑超锋、陈敬元、陈柳成、陈奕焕、程博、池磊、楚浪、杜伟翔、范璐、方捷伦、方秀雯、韩翔宇、黄元丁、黄章伟、黄芷瑶、郎霄峰、李聪、李文俊、柳洋、刘萧、刘雅铭、卢燚、罗贯一、牟虹枚、彭程、瞿刚、冉昊晨、沈婴婷、汤鑫、汪志、王思全、王宇航、魏珊珊、魏誉添、吴霓欢、徐梦丹、杨坤灵、余一丹、苑宇雪、张海东、张薇、张玉燕、赵阳、钟俊峰、周炜骁、周文、庄艳逢。</p>
+    <p class="alumni"><b><span class="t-en">Graduated students &amp; former members:</span><span class="t-zh">毕业生与曾任成员：</span></b> 岑超锋、陈敬元、陈柳成、陈奕焕、程博、池磊、楚浪、杜伟翔、范璐、方捷伦、方秀雯、韩翔宇、黄元丁、黄章伟、黄芷瑶、郎霄峰、李聪、李磊、李文俊、梁美玲、柳洋、刘凯浪、刘萧、刘雅铭、卢燚、罗贯一、牟虹枚、彭程、瞿刚、冉昊晨、沈婴婷、汤鑫、汪志、王思全、王宇航、魏珊珊、魏誉添、吴迪文、吴霓欢、徐梦丹、杨坤灵、余一丹、苑宇雪、张海东、张薇、张玉燕、赵阳、钟俊峰、周炜骁、周文、庄艳逢。</p>
     <p class="alumni" style="margin-top:8px;color:var(--muted)"><span class="t-en">Alumni have gone on to doctoral study (City University of Hong Kong, Harbin Institute of Technology) and to industry roles at companies including Shenzhen Puman Technology, Ruitu Biotech, and Gangzhu Medical, as well as entrepreneurship.</span><span class="t-zh">毕业生进入香港城市大学、哈尔滨工业大学等攻读博士，或就职于深圳普门科技、瑞图生物、刚竹医疗等企业，亦有自主创业。</span></p>
 
     <div class="note"><span class="t-en"><b>Note.</b> Graduate students are co-advised across the team (Kong · Liu · Qi). Group and individual photos from the lab archive (2020) can be added, or replaced with current ones, on request.</span><span class="t-zh"><b>说明：</b>研究生由课题组（孔湉湉·刘洲·齐成）共同指导。可按需加入实验室存档合影与个人照片（现有为 2020 年版，建议更新为最新照片）。</span></div>
